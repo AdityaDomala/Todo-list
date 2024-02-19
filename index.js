@@ -1,4 +1,19 @@
-const http = require("http");               //getting details of http
+// const http = require("http");               //getting details of http  --- These are old ways of doing things 
+// const gfName = require("./features.js");     //file based modules     ----
+
+// first we have created a external files and added info in it and then we have called it here using imports and displayed it using console
+// console.log(gfName3);
+
+import http from "http";            //  ---- New ways of doing things
+
+// import gfName from "./features.js";         // --- New ways   
+// import { gfName2, gfName3 } from "./features.js";
+
+// import gfName, {gfName2, gfName3} from "./features.js"; //----- better way
+
+import * as myObj from "./features.js";
+
+console.log(myObj);
 
 const server = http.createServer((req, res) => {    //creating a server and requesting and responing 
     //console.log(req.url);  // here console will not display because we didn't called the server
@@ -24,4 +39,4 @@ server.listen(5000, () => {                  // creating a listening function an
     console.log("Server is working at 5000");
 });
 
-// mouldes are of three types 1 > built in module , 2 > third party module, 3 > file based module
+// modules are of three types 1 > built in module , 2 > third party module, 3 > file based module
